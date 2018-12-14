@@ -1,18 +1,18 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "administrador";
+$username = "select";
+$password = "select";
 $database = "COMICS";
 
 // Crear conexión
 $conn = mysqli_connect($servername, $username, $password, $database);
 
-if (!$conn) {
+if ($conn->connect_error) {
     die("Adios mundo cruel");
 }
 
-$sql = "select Comics.nombre, imagen, Autor.nombre, descripcion, año  from Comics, autor
-where Comics.id = Autor.id;"
+$sql = "select Comics.id as id,Comics.name as nombreComic, coverPage, Author.name as autor, description, year  from Comics, Author
+where Comics.id = Author.id order by Comics.id desc limit 4;";
 
 $result = $conn->query($sql);
 
@@ -20,17 +20,19 @@ $comic = [];
 $arrayComics = [];
 
 if($result->num_rows > 0) {
-  while($row = $result->fetch-assoc()) {
-    $comic["titulo"] = $row["Comics.nombre"];
-    $comic["imagen"] = $row["imagen"];
-    $comic["autor"] = $row["Autor.nombre"];
-    $comic["descripcion"] = $row["descripcion"];
-    $comic["año"] = $row["año"];
+
+  while($row = $result->fetch_assoc()) {
+    $comic["titulo"] = $row["nombreComic"];
+    $comic["imagen"] = $row["coverPage"];
+    $comic["autor"] = $row["autor"];
+    $comic["descripcion"] = $row["description"];
+    $comic["anyo"] = $row["year"];
     array_push($arrayComics, $comic);
     unset($comic);
   }
+
   echo json_encode($arrayComics);
 } else {
-  echo null;
+  echo "No esta funcionando";
 }
  ?>

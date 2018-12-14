@@ -31,11 +31,11 @@ body{
   font-size: 120%;
 }
 
-.imagen {
-  width: 41%;
-  height: 50%;
-  float: left;
-  object-fit: fill;
+.row{
+    overflow: hidden;
+}
 
-  margin-right: 1%;
+[class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
 }
