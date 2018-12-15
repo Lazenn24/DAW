@@ -4,6 +4,11 @@ $username = "select";
 $password = "select";
 $database = "COMICS";
 
+$url = $_REQUEST["comic"];
+
+if($url !== "") {
+
+
 // Crear conexión
 $conn = mysqli_connect($servername, $username, $password, $database);
 
@@ -17,10 +22,8 @@ $sql =
 from
     Comics, Author
 where
-    Comics.author = Author.id
-order by
-    Comics.id desc
-limit 4;";
+    Comics.author = Author.id and
+    Comics.name like '%" . $url . "%';";
 
 $result = $conn->query($sql);
 
@@ -45,4 +48,5 @@ if($result->num_rows > 0) {
 }
 
 $conn->close();
+}
  ?>

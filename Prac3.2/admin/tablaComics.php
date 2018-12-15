@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "select";
-$password = "select";
+$username = "admin";
+$password = "admin";
 $database = "COMICS";
 
 // Crear conexión
@@ -13,14 +13,11 @@ if ($conn->connect_error) {
 
 $sql =
 "select
-    Comics.name as nombreComic, coverPage, Author.name as autor, description, year
+    Comics.name as nombreComic, Author.name as autor, description, year
 from
     Comics, Author
 where
-    Comics.author = Author.id
-order by
-    Comics.id desc
-limit 4;";
+    Comics.author = Author.id;";
 
 $result = $conn->query($sql);
 
@@ -31,7 +28,6 @@ if($result->num_rows > 0) {
 
   while($row = $result->fetch_assoc()) {
     $comic["titulo"] = $row["nombreComic"];
-    $comic["imagen"] = $row["coverPage"];
     $comic["autor"] = $row["autor"];
     $comic["descripcion"] = $row["description"];
     $comic["anyo"] = $row["year"];

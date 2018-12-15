@@ -2,6 +2,8 @@ body{
   background-image: url(../imagenes/pattern.jpg);
   background-repeat: repeat;
   background-size: 9%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 .titulo {
   font-family: 'Bangers', cursive;
@@ -31,11 +33,11 @@ body{
   font-size: 120%;
 }
 
-.row{
-    overflow: hidden;
+.imagen {
+  width: 60px;
+  height: 60px;
 }
 
-[class*="col-"]{
-    margin-bottom: -99999px;
-    padding-bottom: 99999px;
+.table {
+  background-color: white;
 }
