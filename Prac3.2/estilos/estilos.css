@@ -1,0 +1,43 @@
+body{
+  background-image: url(../imagenes/pattern.jpg);
+  background-repeat: repeat;
+  background-size: 9%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.titulo {
+  font-family: 'Bangers', cursive;
+  font-size: 400%;
+  margin-top: -3%;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.jumbotron {
+  background-image: url(../imagenes/verde.jpg);
+  background-repeat: no-repeat;
+  border-radius: 0px;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.comic {
+  border: 1px solid #2eb242;
+  background-image: url(../imagenes/verde.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-family: 'Chewy', cursive;
+}
+
+.tituloComic {
+  font-size: 120%;
+}
+
+.imagen {
+  width: 60px;
+  height: 60px;
+}
+
+.table {
+  background-color: white;
+}

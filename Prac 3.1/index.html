@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>¿Cómo de segura es tu contraseña?</title>
+  <link type="text/css" rel="stylesheet" href="index.css" />
+  <script type="text/javascript" src="functions.js"></script>
+</head>
+
+<body>
+
+  <ul>
+    <li><a href="about/about.html">Acerca de mi</a></li>
+    <li><a href="https://howsecureismypassword.net/">Web Similar</a></li>
+  </ul>
+
+  <h1>¿Es segura tu contraseña?</h1>
+
+  <img src="imagenes/lock.png" />
+
+  <p>
+    Compruébalo escribiéndola aquí.
+    <br /> No te preocupes, no se guardará en ningun sitio.
+  </p>
+  <form action="" method="">
+
+    <input id="text" type="password" onclick="removePlaceholder()" onkeypress="analizePass()" value="placeholder" />
+
+    <div id="radio">
+      <input id="1000" type="radio" name="power" value="1000" onclick="analizePass()" />
+      <label for="1000">CPU 1000</label>
+      <input id="10000" type="radio" name="power" value="10000" onclick="analizePass()" />
+      <label for="100000">GPU 10000</label>
+      <input id="1000000" type="radio" name="power" value="1000000" onclick="analizePass()" />
+      <label for="1000000">GRID 1000000</label>
+    </div>
+
+  </form>
+
+  <p id="resultado"><img id="myImg" src="imagenes/wait.gif" /></p>
+
+
+</html>
